@@ -1,0 +1,61 @@
+
+/* Optimizar rendimiento */
+.card {
+    /* Reducir complejidad del blur */
+    backdrop-filter: blur(5px);
+    /* Simplificar sombra */
+    box-shadow: 0 4px 16px rgba(31, 38, 135, 0.2);
+    /* Usar transform GPU */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Reducir animaciones */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Eliminar efecto shine complejo */
+.card::before {
+    display: none;
+}
+
+/* Simplificar badges */
+.badge {
+    background: #0d6efd;
+    /* Eliminar animación pulse */
+    animation: none;
+}
+
+/* Optimizar blur en navbar */
+.navbar-special {
+    background: rgba(26, 31, 37, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* Reducir animaciones de iconos */
+.exercise-icon {
+    animation: none;
+}
+
+/* Simplificar card special */
+.card-special {
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(66, 135, 245, 0.2);
+    /* Eliminar animación infinita */
+    animation: none;
+}
+
+/* Optimizar transiciones */
+.list-group-item {
+    transition: transform 0.2s ease;
+}
+
+/* Media query para dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

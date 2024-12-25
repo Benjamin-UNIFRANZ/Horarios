@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1f25">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Mi Horario</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/icons/badge.png">
+
+</head>
+<body>
+    <!-- Navbar responsivo -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-special fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand brand-special" href="#">
+                <i class="fas fa-clock me-2"></i>Mi Horario
+                <span class="badge bg-gradient-primary d-none d-sm-inline">Premium</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-special active" href="#weekdays">
+                            <i class="fas fa-calendar-week d-inline d-lg-none me-2"></i>Lunes-Viernes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-special" href="#saturday">
+                            <i class="fas fa-calendar-day d-inline d-lg-none me-2"></i>Sábado
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-special" href="#sunday">
+                            <i class="fas fa-calendar-day d-inline d-lg-none me-2"></i>Domingo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navegación rápida móvil -->
+    <div class="quick-nav d-lg-none mt-5 pb-1 mb-0">
+        <div class="container">
+            <div class="row g-2 justify-content-center">
+                <div class="col-auto">
+                    <a href="#weekdays" class="quick-nav-item">L-V</a>
+                </div>
+                <div class="col-auto">
+                    <a href="#saturday" class="quick-nav-item">S</a>
+                </div>
+                <div class="col-auto">
+                    <a href="#sunday" class="quick-nav-item">D</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid container-lg mt-5 pt-4 pt-lg-5">
+        <div class="row g-4 container-fluid">
+            <!-- Sección Lunes-Viernes -->
+            <div class="col-12">
+                <div id="weekdays" class="card h-100">
+                    <div class="card-header py-3">
+                        <h2 class="card-title h5 text-white mb-0">
+                            <i class="fas fa-calendar-week me-2"></i>Lunes - Viernes
+                        </h2>
+                    </div>
+                    <div class="card-body p-0 p-sm-3">
+                        <div class="list-group list-group-flush">
+                            <!-- Actividades Lunes-Viernes -->
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-bed me-2"></i>Levantarse-alistarse</span>
+                                <span class="badge">5:50</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-running me-2"></i>Trotar 15 min</span>
+                                <span class="badge">6:10</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Desayunar</span>
+                                <span class="badge">6:45</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">7:10</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">12:20</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Almorzar</span>
+                                <span class="badge">13:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-dumbbell me-2"></i>Ir a entrenar gym</span>
+                                <span class="badge">14:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">16:20</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">18:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Cenar</span>
+                                <span class="badge">18:45</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">19:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-tooth me-2"></i>Lavarse los dientes</span>
+                                <span class="badge">21:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-moon me-2"></i>Dormir</span>
+                                <span class="badge">21:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Sección Sábado -->
+            <div class="col-12">
+                <div id="saturday" class="card h-100">
+                    <div class="card-header py-3">
+                        <h2 class="card-title h5 text-white mb-0">
+                            <i class="fas fa-calendar-day me-2"></i>Sábado
+                        </h2>
+                    </div>
+                    <div class="card-body p-0 p-sm-3">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-bed me-2"></i>Levantarse-alistarse</span>
+                                <span class="badge">6:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-running me-2"></i>Trotar</span>
+                                <span class="badge">6:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Desayunar</span>
+                                <span class="badge">7:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-broom me-2"></i>Limpieza</span>
+                                <span class="badge">8:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">10:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">12:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Almorzar</span>
+                                <span class="badge">12:45</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-dumbbell me-2"></i>Gimnasio</span>
+                                <span class="badge">14:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">16:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">18:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Cenar</span>
+                                <span class="badge">18:45</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">19:30</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-tooth me-2"></i>Lavarse los dientes</span>
+                                <span class="badge">21:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-moon me-2"></i>Dormir</span>
+                                <span class="badge">21:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Domingo -->
+            <div class="col-12">
+                <div id="sunday" class="card h-100">
+                    <div class="card-header py-3">
+                        <h2 class="card-title h5 text-white mb-0">
+                            <i class="fas fa-calendar-day me-2"></i>Domingo
+                        </h2>
+                    </div>
+                    <div class="card-body p-0 p-sm-3">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-bed me-2"></i>Levantarse-alistarse</span>
+                                <span class="badge">6:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">6:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">9:20</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Desayunamos</span>
+                                <span class="badge">9:35</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">10:25</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">12:10</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-dumbbell me-2"></i>Entrenar Gym</span>
+                                <span class="badge">12:20</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">14:15</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Almuerzo</span>
+                                <span class="badge">15:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">16:25</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-couch me-2"></i>Descanso</span>
+                                <span class="badge">18:55</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-utensils me-2"></i>Cenar</span>
+                                <span class="badge">17:20</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-book me-2"></i>Estudiar</span>
+                                <span class="badge">20:10</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-tooth me-2"></i>Lavarse los dientes</span>
+                                <span class="badge">21:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="text-white"><i class="fas fa-moon me-2"></i>Dormir</span>
+                                <span class="badge">21:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button id="notifyBtn" class="btn btn-primary position-fixed bottom-0 end-0 m-4">
+        <i class="fas fa-bell me-2"></i>Probar Notificación
+    </button>
+    
+<script>
+    // Función para solicitar permisos
+    async function solicitarPermisoNotificaciones() {
+        try {
+            const permiso = await Notification.requestPermission();
+            return permiso === 'granted';
+        } catch (error) {
+            console.error('Error al solicitar permiso:', error);
+            return false;
+        }
+    }
+
+    // Función para enviar notificación
+    async function enviarNotificacion() {
+        if (!('Notification' in window)) {
+            alert('Este navegador no soporta notificaciones');
+            return;
+        }
+
+        const tienePermiso = await solicitarPermisoNotificaciones();
+        
+        if (tienePermiso) {
+            const registration = await navigator.serviceWorker.ready;
+            await registration.showNotification('Mi Horario', {
+                body: 'Prueba de notificación',
+                icon: './assets/icons/icon-192.png',
+                badge: './assets/icons/badge.png',
+                vibrate: [200, 100, 200],
+                requireInteraction: true,
+                actions: [
+                    {
+                        action: 'ver',
+                        title: 'Ver horario'
+                    },
+                    {
+                        action: 'posponer',
+                        title: '5 minutoss'
+                    }
+                ]
+            });
+        }
+    }
+
+    // Registrar Service Worker y configurar botón
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+            try {
+                const registration = await navigator.serviceWorker.register('/sw.js');
+                console.log('ServiceWorker registrado:', registration.scope);
+
+                // Configurar botón de notificación
+                const notifyBtn = document.getElementById('notifyBtn');
+                notifyBtn.addEventListener('click', enviarNotificacion);
+            } catch (error) {
+                console.error('Error al registrar ServiceWorker:', error);
+            }
+        });
+    }
+</script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Módulos de la aplicación -->
+    <script type="module" src="js/app.js"></script>
+    <!-- Scripts de la aplicación -->
+    <script type="module">
+        // Registrar Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('ServiceWorker registrado:', registration.scope);
+                } catch (error) {
+                    console.error('Error al registrar ServiceWorker:', error);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- http://127.0.0.1:49705/index.html -->
