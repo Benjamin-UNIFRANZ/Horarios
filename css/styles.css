@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
@@ -9,11 +8,10 @@ body {
 
 .card {
     background: rgba(30, 35, 45, 0.6);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 20px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 
@@ -24,12 +22,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: 0.5s;
 }
 
@@ -61,12 +54,11 @@ body {
 
 .list-group-item {
     background: rgba(43, 48, 53, 0.8);
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(73, 80, 87, 0.2);
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 1rem;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .list-group-item:hover {
@@ -79,7 +71,6 @@ body {
     border-radius: 8px;
     font-weight: 500;
     background: linear-gradient(45deg, #0d6efd, #0dcaf0);
-    animation: pulse 2s infinite;
 }
 
 .exercise-icon {
@@ -88,36 +79,11 @@ body {
     color: #0dcaf0;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
-    }
-}
 .card-special {
     background: linear-gradient(135deg, rgba(25, 25, 36, 0.9), rgba(35, 35, 45, 0.8));
     border: 2px solid transparent;
     background-clip: padding-box;
-    backdrop-filter: blur(20px);
-    box-shadow: 
-        0 0 15px rgba(66, 135, 245, 0.3),
-        inset 0 0 20px rgba(66, 135, 245, 0.2);
-    animation: borderGlow 3s infinite alternate;
-}
-
-.card-special::before {
-    content: '';
-    position: absolute;
-    top: -2px; right: -2px; bottom: -2px; left: -2px;
-    background: linear-gradient(45deg, #4287f5, #3a36e7, #34d399);
-    border-radius: inherit;
-    z-index: -1;
-    animation: gradientBorder 3s ease infinite;
+    box-shadow: 0 0 15px rgba(66, 135, 245, 0.3), inset 0 0 20px rgba(66, 135, 245, 0.2);
 }
 
 .card-special .card-header {
@@ -129,32 +95,15 @@ body {
     background: rgba(30, 35, 45, 0.4);
     border-left: 4px solid #4287f5;
     margin: 10px 0;
-    transform: translateX(0);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .card-special .list-group-item:hover {
-    transform: translateX(10px);
     background: rgba(40, 45, 55, 0.6);
+    transform: translateX(10px);
     border-left: 4px solid #34d399;
 }
 
-.card-special .exercise-icon {
-    animation: pulse 2s infinite;
-}
-
-@keyframes gradientBorder {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
-@keyframes borderGlow {
-    from { box-shadow: 0 0 20px rgba(66, 135, 245, 0.3); }
-    to { box-shadow: 0 0 30px rgba(66, 135, 245, 0.6); }
-}
-
-/* Ajustes responsivos para cards */
 @media (max-width: 576px) {
     .card-header {
         padding: 1rem;
@@ -189,7 +138,6 @@ body {
     }
 }
 
-/* Ajustes extra para pantallas muy pequeñas */
 @media (max-width: 320px) {
     .card-title {
         font-size: 1rem;
@@ -203,7 +151,6 @@ body {
 
 .navbar-special {
     background: rgba(26, 31, 37, 0.8);
-    backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(66, 135, 245, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
@@ -214,25 +161,11 @@ body {
     margin: 0 15px;
     padding: 8px 15px !important;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
-.nav-link-special::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #4287f5, #34d399);
-    border-radius: 8px;
-    opacity: 0;
-    z-index: -1;
-    transition: all 0.3s ease;
-}
-
-.nav-link-special:hover::before {
-    opacity: 0.2;
+.nav-link-special:hover {
+    background: rgba(66, 135, 245, 0.2);
 }
 
 .nav-link-special.active {
@@ -240,7 +173,6 @@ body {
     border: 1px solid rgba(66, 135, 245, 0.3);
 }
 
-/* Estilos Navbar Responsive */
 .navbar-toggler {
     border: 1px solid rgba(66, 135, 245, 0.3);
     padding: 0.5rem;
@@ -255,7 +187,6 @@ body {
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background: rgba(26, 31, 37, 0.95);
-        backdrop-filter: blur(10px);
         padding: 1rem;
         border-radius: 12px;
         margin-top: 1rem;
@@ -265,17 +196,16 @@ body {
     .nav-link-special {
         margin: 0.5rem 0;
     }
-    /* Hacer mas pequeño el boton navbar togler */
+
     .navbar-toggler {
         padding: 0.25rem;
     }
-    /* hacer mas pequeño el icono togler */
+
     .navbar-toggler-icon {
         background-size: 28px;
     }
 }
 
-/* Lista Horizontal de Navegación */
 .quick-nav {
     display: flex;
     justify-content: center;
@@ -297,48 +227,31 @@ body {
     text-decoration: none;
     font-weight: 600;
     border: 2px solid rgba(66, 135, 245, 0.3);
-    transition: all 0.3s ease;
-}
-
-.quick-nav-item::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #4287f5, #34d399);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .quick-nav-item:hover {
     transform: translateY(-5px);
-    color: #fff;
+    background: rgba(66, 135, 245, 0.2);
 }
 
-.quick-nav-item:hover::before {
-    opacity: 1;
-}
-
-/* Mostrar navegación rápida solo en móviles */
 @media (min-width: 992px) {
     .quick-nav {
         display: none;
     }
 }
 
-/* Optimizar tamaño en pantallas muy pequeñas */
 @media (max-width: 400px) {
     .quick-nav {
         gap: 0.5rem;
     }
+
     .quick-nav-item {
         width: 35px;
         height: 35px;
         font-size: 0.9rem;
     }
 }
-
 
 .brand-special {
     font-weight: 600;
@@ -357,6 +270,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 .premium-badge {
     background: linear-gradient(45deg, #4287f5, #34d399);
     padding: 5px 10px;
